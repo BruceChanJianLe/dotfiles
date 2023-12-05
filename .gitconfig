@@ -1,0 +1,17 @@
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	ad = add
+[http]
+	sslverify = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[diff]
+	tool = meld
+[core]
+	editor = nvim

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script does hyperspace jumps
+
+selected=$(fwd)
+
+if [ ! -z $selected ]; then
+  cd $selected
+fi

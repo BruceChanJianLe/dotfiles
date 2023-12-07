@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# This script do a fzf search and containerreturns 
+# the absolute path to my frequent working dirs.
+
+export GIT_CONFIG_DIR="$HOME/.config/git"
+source $GIT_CONFIG_DIR/working_dirs
+
+# Prompt user to select
+if [[ $# -eq 1 ]]; then
+  selected=$1
+else
+  selected=$(find $WORKING_DIRS -mindepth 1 -maxdepth 1 -type d 2> /dev/null | fzf)
+fi
+
+# Exit if nothing is selected
+if [[ -z $selected ]]; then
+  echo -n ""
+  exit 0
+fi
+
+# Dive deeper if it is a bare repo
+if git --git-dir=$selected rev-parse --is-bare-repository &> /dev/null; then
+  new_selected=$(find $selected -mindepth 1 -maxdepth 1 -type d | awk -F '/' '{print $NF}' | fzf)
+
+  if [[ ! -z $new_selected ]]; then
+    echo -n $selected"/"$new_selected
+    exit 7
+  fi
+fi
+
+# Return value if it is not a bare repo
+echo -n "$selected"
+exit 0

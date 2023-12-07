@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# This script start and switch between sessions smoothly!
+# Reference: https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
+
+# Prompt user to select
+if [[ $# -eq 1 ]]; then
+  selected=$1
+else
+  selected=$(fwd)
+  is_bare_repo="$?"
+fi
+
+# Exit if nothing is selected
+if [[ -z $selected ]]; then
+  exit 0
+fi
+
+# Trim off the path, dots are not allow as tmux name
+bare_repo_name=$(basename $(dirname "$selected") | tr . _)
+if [[ is_bare_repo -eq 7 ]]; then
+  branch_name=$(basename "$selected" | tr . _)
+  selected_name=$bare_repo_name"_"$branch_name
+else
+  selected_name=$(basename "$selected" | tr . _)
+  tmux_running=$(pgrep tmux)
+fi
+
+# Attach to the tmux sess if already exist
+if ! tmux has-session -t=$selected_name 2> /dev/null; then
+  tmux new-session -ds $selected_name -c $selected
+fi
+
+# Attach if in raw shell, switch if in tmux
+if [ -z "$TMUX" ]; then
+  tmux attach -t $selected_name
+else
+  tmux switch-client -t $selected_name
+fi
+

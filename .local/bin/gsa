@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# This script will switch git credential globally
+
+export GIT_CONFIG_DIR="$HOME/.config/git"
+source $GIT_CONFIG_DIR/user
+
+if [ -z $1 ]
+then
+  echo "Please provide a valid user, for example:"
+  echo "gsa cjl"
+  echo "gsa bri local"
+  exit 1
+else
+  declare -n user=$1
+  # Validate if user exist
+  # if [[ -v 'user[name]' && -v 'user[email]' ]]
+  if [[ -v 'user[@]' ]]
+  then
+    if [[ -n $2 && $2 == "local" ]]
+    then
+      git config --local user.name  "${user[name]}"
+      git config --local user.email "${user[email]}"
+      echo "Local Git: Welcome back ${user[name]}"
+    else
+      git config --global user.name  "${user[name]}"
+      git config --global user.email "${user[email]}"
+      echo "Git: Welcome back ${user[name]}"
+    fi
+  else
+    echo "Git: Provided user not in the list."
+  fi
+fi
+
+
+# Ref
+# https://stackoverflow.com/questions/39297530/bash-use-variable-as-name-of-associative-array-when-calling-value
+# https://stackoverflow.com/questions/26925905/in-bash-test-if-associative-array-is-declared

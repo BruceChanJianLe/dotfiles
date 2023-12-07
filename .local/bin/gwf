@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script get the absolute path 
+# to the provided file into system clipboard.
+
+if [ -z "$1" ]
+then
+  echo "Usage: gwf file.txt"
+  exit 0
+else
+  realpath $1 | xargs echo -n | xsel -i -b
+fi

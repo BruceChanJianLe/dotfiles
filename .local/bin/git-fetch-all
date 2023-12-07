@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Auto git fetch for my git dirs
+
+export GIT_CONFIG_DIR="$HOME/.config/git"
+source $GIT_CONFIG_DIR/working_dirs
+
+function get_dirs ()
+{
+  # Array to store available dirs
+  declare -a arr
+  i=0
+
+  # Place dir's name into the array
+  dir_list=$(find $GIT_DIRS -mindepth 1 -maxdepth 1 -type d 2> /dev/null)
+  for dir in $dir_list
+  do
+    dir_name=$(basename $dir)
+    if ! grep -qs "$dir_name" <<< $GIT_IGNORE_DIRS; then
+      arr[$i]=$dir
+      let "i+=1"
+    fi
+  done
+
+  retval arr
+}
+
+dir_arr=$get_dirs
+
+echo -e "${dir_arr[@]}"
+
+# Display container's name through looping the array
+# let "i-=1"
+# for j in $(seq 0 $i)
+# do
+#   echo $j")" ${arr[$j]}
+# done
+
+

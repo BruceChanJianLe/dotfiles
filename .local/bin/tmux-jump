@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Fuzzy find your tmux sessions
+
+selected=$(tmux list-session -F \#S | fzf)
+
+# Exit if nothing is selected
+if [[ -z $selected ]]; then
+  exit 0
+fi
+
+# Attach if in raw shell, switch if in tmux
+if [ -z "$TMUX" ]; then
+  tmux attach -t $selected
+else
+  tmux switch-client -t $selected
+fi

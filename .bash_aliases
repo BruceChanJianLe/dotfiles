@@ -18,14 +18,13 @@ alias ross='source $ROS_CONFIG_DIR/ros_env'
 alias ros='ross' # Keeping for your convenience :)
 alias drone='source $ROS_CONFIG_DIR/drone_env'
 alias drone2='source $ROS_CONFIG_DIR/drone_env2'
-alias foxy='source $ROS_CONFIG_DIR/foxy_env'
-alias galactic='source $ROS_CONFIG_DIR/galactic_env'
+alias foxy='source $ROS_CONFIG_DIR/ros2_env foxy'
+alias galactic='source $ROS_CONFIG_DIR/ros2_env galactic'
+alias humble='source $ROS_CONFIG_DIR/ros2_env humble'
 alias gzweb='source $ROS_CONFIG_DIR/gzweb_env'
 alias rosdepinstall='rosdep install --from-paths src --ignore-src -r -y'
 alias eros='nvim $ROS_CONFIG_DIR/ros_env'
-alias edro='nvim $ROS_CONFIG_DIR/drone_env'
-alias efox='nvim $ROS_CONFIG_DIR/foxy_env'
-alias egal='nvim $ROS_CONFIG_DIR/galactic_env'
+alias eros2='nvim $ROS_CONFIG_DIR/ros2_env'
 alias rtg="rostopic list | grep "
 
 # VPN

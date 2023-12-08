@@ -1,0 +1,25 @@
+#!/bin/sh
+
+VERSION_ID=$(lsb_release -rs)
+ROS_VERSION=''
+if [[ $VERSION_ID == '18.04' ]]; then
+  ROS_VERSION=melodic
+elif [[ $VERSION_ID == '20.04' ]]; then
+  ROS_VERSION=noetic
+fi
+
+SCRIPT_EXTENSION=''
+if test -n "$ZSH_VERSION"; then
+  SCRIPT_EXTENSION="zsh"
+elif test -n "$BASH_VERSION"; then
+  SCRIPT_EXTENSION="bash"
+fi
+
+source $HOME/.config/ros/ros_env
+
+source $HOME/drone_code/catkin_build_ws/devel/setup.$SCRIPT_EXTENSION
+source $HOME/PX4-Autopilot/Tools/setup_gazebo.bash $HOME/PX4-Autopilot $HOME/PX4-Autopilot/build/px4_sitl_default
+
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/sitl_gazebo
+

@@ -1,0 +1,25 @@
+#!/bin/sh
+
+SCRIPT_EXTENSION=""
+EXTRA_SETUP="false"
+if test -n "$ZSH_VERSION"; then
+  SCRIPT_EXTENSION="zsh"
+  EXTRA_SETUP="true"
+elif test -n "$BASH_VERSION"; then
+  SCRIPT_EXTENSION="bash"
+fi
+
+source /opt/ros/foxy/setup.$SCRIPT_EXTENSION
+
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.$SCRIPT_EXTENSION
+source /usr/share/colcon_cd/function/colcon_cd.sh
+
+source /usr/share/gazebo/setup.sh
+
+if [[ $EXTRA_SETUP == "true" ]]
+then
+  eval "$(register-python-argcomplete3 ros2)"
+  eval "$(register-python-argcomplete3 colcon)"
+fi
+
+export ROS_DOMAIN_ID=0

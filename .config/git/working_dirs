@@ -5,5 +5,5 @@
 export WORKING_DIRS="$HOME/references $HOME/reference $HOME/.config $HOME/ros1_ws $HOME/ros2_ws"
 
 # Define git directories to fetch
-export GIT_DIRS="$HOME/references" # $HOME/reference $HOME/.config/zsh $HOME/.config/nvim $HOME/ros1_ws"
+export GIT_DIRS="$HOME/reference $HOME/.config $HOME/.config $HOME/ros1_ws $HOME/ros2_ws"
 export GIT_IGNORE_DIRS=".git build devel .vscode branches hooks info objects refs"

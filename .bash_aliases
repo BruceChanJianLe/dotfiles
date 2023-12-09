@@ -135,3 +135,6 @@ elif test -n "$BASH_VERSION"; then
 fi
 FZF_CONFIG_PATH=$HOME/.vim/plugged/fzf/shell/key-bindings.$SCRIPT_EXTENSION
 test -f $FZF_CONFIG_PATH && source $FZF_CONFIG_PATH
+
+# enable rust
+alias rust="source $HOME/.cargo/env"

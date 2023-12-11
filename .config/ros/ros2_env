@@ -1,4 +1,12 @@
 #!/bin/sh
+# This script source ros2 related environment vars
+
+if test $# -eq 0; then
+  echo -e "Please provide ros2 distro version, foxy, galactic, humble..."
+  echo -e "For example:"
+  echo -e "source ros2_env humble"
+  return 1
+fi
 
 SCRIPT_EXTENSION=""
 EXTRA_SETUP="false"
@@ -22,4 +30,5 @@ then
   eval "$(register-python-argcomplete3 colcon)"
 fi
 
+export RCUTILS_COLORIZED_OUTPUT=1
 export ROS_DOMAIN_ID=0

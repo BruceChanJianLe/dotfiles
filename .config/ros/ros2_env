@@ -2,8 +2,9 @@
 # This script source ros2 related environment vars
 
 if test $# -eq 0; then
-  echo -e "Please provide ros2 distro version, foxy, galactic, humble..."
-  echo -e "For example:"
+  echo -e "The available distros are:\n=========================="
+  ls /opt/ros/ | grep -E 'dashing|eloquent|foxy|galactic|humble'
+  echo -e "\nFor example:\n============"
   echo -e "source ros2_env humble"
   return 1
 fi

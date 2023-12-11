@@ -97,7 +97,7 @@ for j in $(seq 0 $dir_arr_size)
 do
   # echo ${dir_arr[$j]}
   result=$(update_git_repo "${dir_arr[$j]}")
-  if [[ -z $result ]]; then
+  if [[ -z $result && $? ]]; then
     echo -e $GREEN"Successfully update\t"$YELLOW"$(basename ${dir_arr[$j]})"$NOFORMAT
   else
     if [[ $ONLY_SUCCESS == "false" ]]; then

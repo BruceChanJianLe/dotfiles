@@ -28,9 +28,9 @@ alias eros2='nvim $ROS_CONFIG_DIR/ros2_env'
 alias rtg="rostopic list | grep "
 
 # VPN
-alias vpn='$HOME/vpn connect nexus.a-star.edu.sg'
-alias vpnd='$HOME/vpn disconnect'
-alias vpns='$HOME/vpn state'
+alias vpn='/opt/cisco/anyconnect/bin/vpn  connect nexus.a-star.edu.sg'
+alias vpnd='/opt/cisco/anyconnect/bin/vpn disconnect'
+alias vpns='/opt/cisco/anyconnect/bin/vpn state'
 
 # Bri's Favourite Aliases
 alias ccb='colcon build'

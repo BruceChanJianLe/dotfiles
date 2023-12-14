@@ -65,6 +65,7 @@ alias gfa='git fetch --all'
 alias gsb='gsa bri'
 alias gsc='gsa cjl'
 alias gr='cd $(git rev-parse --show-toplevel)'
+alias gu='git-fetch-all'
 
 # Dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

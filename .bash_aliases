@@ -65,6 +65,7 @@ alias gfa='git fetch --all'
 alias gsb='gsa bri'
 alias gsc='gsa cjl'
 alias gr='cd $(git rev-parse --show-toplevel)'
+alias gu='git-fetch-all'
 
 # Dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -118,6 +119,7 @@ alias sbal="source $HOME/.bash_aliases"
 alias lg="ll | grep"
 alias eg="env | grep"
 alias hyperjump="source jump"
+alias file-permission='stat -c "%a %n"'
 
 # i3
 alias lock='i3lock -c 000000'

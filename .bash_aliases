@@ -119,6 +119,7 @@ alias sbal="source $HOME/.bash_aliases"
 alias lg="ll | grep"
 alias eg="env | grep"
 alias hyperjump="source jump"
+alias file-permission='stat -c "%a %n"'
 
 # i3
 alias lock='i3lock -c 000000'

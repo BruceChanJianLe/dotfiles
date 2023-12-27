@@ -21,8 +21,8 @@ fi
 source /opt/ros/$1/setup.$SCRIPT_EXTENSION
 # Source setup if it's a workspace
 script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
-if test -f $script_dir/setup.$SCRIPT_EXTENSION
-  source $script_dir/setup.$SCRIPT_EXTENSION
+if test -f $script_dir/setup.$SCRIPT_EXTENSION; then
+  source $script_dir/install/setup.$SCRIPT_EXTENSION
 fi
 
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.$SCRIPT_EXTENSION

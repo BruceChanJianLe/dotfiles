@@ -28,9 +28,9 @@ alias eros2='nvim $ROS_CONFIG_DIR/ros2_env'
 alias rtg="rostopic list | grep "
 
 # VPN
-alias vpn='$HOME/vpn connect nexus.a-star.edu.sg'
-alias vpnd='$HOME/vpn disconnect'
-alias vpns='$HOME/vpn state'
+alias vpn='/opt/cisco/anyconnect/bin/vpn  connect nexus.a-star.edu.sg'
+alias vpnd='/opt/cisco/anyconnect/bin/vpn disconnect'
+alias vpns='/opt/cisco/anyconnect/bin/vpn state'
 
 # Bri's Favourite Aliases
 alias ccb='colcon build'
@@ -65,6 +65,7 @@ alias gfa='git fetch --all'
 alias gsb='gsa bri'
 alias gsc='gsa cjl'
 alias gr='cd $(git rev-parse --show-toplevel)'
+alias gu='git-fetch-all'
 
 # Dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -101,7 +102,6 @@ alias tj='tmux-jump'
 alias sane='stty sane'
 alias gwd='pwd | xargs echo -n | xsel -i -b'
 alias copyfile='xsel -i -b < '
-alias cf='copyfile'
 alias cls='clear; ls'
 alias cll='clear; ll'
 alias ..='cd ..'
@@ -119,6 +119,7 @@ alias sbal="source $HOME/.bash_aliases"
 alias lg="ll | grep"
 alias eg="env | grep"
 alias hyperjump="source jump"
+alias file-permission='stat -c "%a %n"'
 
 # i3
 alias lock='i3lock -c 000000'
@@ -135,3 +136,6 @@ elif test -n "$BASH_VERSION"; then
 fi
 FZF_CONFIG_PATH=$HOME/.vim/plugged/fzf/shell/key-bindings.$SCRIPT_EXTENSION
 test -f $FZF_CONFIG_PATH && source $FZF_CONFIG_PATH
+
+# enable rust
+alias rust="source $HOME/.cargo/env"

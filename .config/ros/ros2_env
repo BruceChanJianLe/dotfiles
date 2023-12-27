@@ -1,4 +1,13 @@
 #!/bin/sh
+# This script source ros2 related environment vars
+
+if test $# -eq 0; then
+  echo -e "The available distros are:\n=========================="
+  ls /opt/ros/ | grep -E 'dashing|eloquent|foxy|galactic|humble'
+  echo -e "\nFor example:\n============"
+  echo -e "source ros2_env humble"
+  return 1
+fi
 
 SCRIPT_EXTENSION=""
 EXTRA_SETUP="false"
@@ -27,4 +36,5 @@ then
   eval "$(register-python-argcomplete3 colcon)"
 fi
 
+export RCUTILS_COLORIZED_OUTPUT=1
 export ROS_DOMAIN_ID=0

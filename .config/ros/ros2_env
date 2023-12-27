@@ -22,6 +22,7 @@ source /opt/ros/$1/setup.$SCRIPT_EXTENSION
 # Source setup if it's a workspace
 script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
 if [[ -f "$script_dir/install/setup.$SCRIPT_EXTENSION" ]]; then
+  echo "Workspace sourced!"
   source $script_dir/install/setup.$SCRIPT_EXTENSION
 fi
 

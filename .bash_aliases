@@ -137,5 +137,8 @@ fi
 FZF_CONFIG_PATH=$HOME/.vim/plugged/fzf/shell/key-bindings.$SCRIPT_EXTENSION
 test -f $FZF_CONFIG_PATH && source $FZF_CONFIG_PATH
 
+P_ALIASES_PATH=$HOME/.config/p_aliases/.ssh_aliases
+test -f $P_ALIASES_PATH && source $P_ALIASES_PATH
+
 # enable rust
 alias rust="source $HOME/.cargo/env"

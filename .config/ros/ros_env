@@ -25,11 +25,5 @@ if [[ -f "$script_dir/devel/setup.$SCRIPT_EXTENSION" ]]; then
   source $script_dir/devel/setup.$SCRIPT_EXTENSION
 fi
 
-LOCAL_IP=$(hostname -I | awk {'print $1'})
-export ROS_HOSTNAME=192.168.1.15
-
-# LOCAL ROS MASTER
-# export ROS_MASTER_URI=http://$LOCAL_IP:11311
-
-# OTHER ROS MASTER
-export ROS_MASTER_URI=http://192.168.1.153:11311
+ROS_SETUP_PATH=$HOME/.config/p_aliases/ros_setup
+test -f $ROS_SETUP_PATH && source $ROS_SETUP_PATH

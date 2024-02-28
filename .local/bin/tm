@@ -16,6 +16,7 @@ do
   case $opt in
     "New Session")
       read -rp "Enter new session name: " SESSION_NAME
+      # tmux -f $HOME/.tmux.conf -L yodalayheehoo new -s "$SESSION_NAME"
       tmux -L yodalayheehoo new -s "$SESSION_NAME"
       break
       ;;

@@ -1,4 +1,13 @@
 #!/bin/sh
+# This script source ros2 related environment vars
+
+if test $# -eq 0; then
+  echo -e "The available distros are:\n=========================="
+  ls /opt/ros/ | grep -E 'dashing|eloquent|foxy|galactic|humble'
+  echo -e "\nFor example:\n============"
+  echo -e "source ros2_env humble"
+  return 1
+fi
 
 SCRIPT_EXTENSION=""
 EXTRA_SETUP="false"
@@ -10,6 +19,12 @@ elif test -n "$BASH_VERSION"; then
 fi
 
 source /opt/ros/$1/setup.$SCRIPT_EXTENSION
+# Source setup if it's a workspace
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+if [[ -f "$script_dir/install/setup.$SCRIPT_EXTENSION" ]]; then
+  echo "Workspace sourced!"
+  source $script_dir/install/setup.$SCRIPT_EXTENSION
+fi
 
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.$SCRIPT_EXTENSION
 source /usr/share/colcon_cd/function/colcon_cd.sh
@@ -22,4 +37,5 @@ then
   eval "$(register-python-argcomplete3 colcon)"
 fi
 
-export ROS_DOMAIN_ID=0
+ROS2_SETUP_PATH=$HOME/.config/p_aliases/ros2_setup
+test -f $ROS2_SETUP_PATH && source $ROS2_SETUP_PATH

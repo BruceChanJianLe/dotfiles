@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script do a fzf search and containerreturns 
+# This script do a fzf search and returns 
 # the absolute path to my frequent working dirs.
 
 export GIT_CONFIG_DIR="$HOME/.config/git"

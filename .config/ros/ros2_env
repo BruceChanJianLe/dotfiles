@@ -37,5 +37,5 @@ then
   eval "$(register-python-argcomplete3 colcon)"
 fi
 
-export RCUTILS_COLORIZED_OUTPUT=1
-export ROS_DOMAIN_ID=0
+ROS2_SETUP_PATH=$HOME/.config/p_aliases/ros2_setup
+test -f $ROS2_SETUP_PATH && source $ROS2_SETUP_PATH

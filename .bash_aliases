@@ -24,7 +24,9 @@ alias humble='source $ROS_CONFIG_DIR/ros2_env humble'
 alias gzweb='source $ROS_CONFIG_DIR/gzweb_env'
 alias rosdepinstall='rosdep install --from-paths src --ignore-src -r -y'
 alias eros='nvim $ROS_CONFIG_DIR/ros_env'
+alias eross='nvim $ROS_CONFIG_DIR/../p_aliases/ros_setup'
 alias eros2='nvim $ROS_CONFIG_DIR/ros2_env'
+alias eross2='nvim $ROS_CONFIG_DIR/../p_aliases/ros2_setup'
 alias rtg="rostopic list | grep "
 
 # VPN
@@ -136,6 +138,9 @@ elif test -n "$BASH_VERSION"; then
 fi
 FZF_CONFIG_PATH=$HOME/.vim/plugged/fzf/shell/key-bindings.$SCRIPT_EXTENSION
 test -f $FZF_CONFIG_PATH && source $FZF_CONFIG_PATH
+
+P_ALIASES_PATH=$HOME/.config/p_aliases/.ssh_aliases
+test -f $P_ALIASES_PATH && source $P_ALIASES_PATH
 
 # enable rust
 alias rust="source $HOME/.cargo/env"

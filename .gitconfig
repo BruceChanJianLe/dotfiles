@@ -15,6 +15,3 @@
 	tool = meld
 [core]
 	editor = nvim
-[user]
-	name = Chan Jian Le
-	email = chanjl@i2r.a-star.edu.sg

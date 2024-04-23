@@ -10,7 +10,7 @@ alias vis='nvim -S Session.vim'
 alias vs='nvim -S Session.vim'
 
 # ROS
-alias gk="pkill -f gzclient; pkill -f gzserver; pkill -f gazebo"
+alias gk="pkill -f gzclient; pkill -f gzserver; pkill -f gazebo; pkill -f 'gz sim'"
 alias rk='for i in $(pgrep -f ros/$ROS_DISTRO); do kill $i; done; pkill -f rviz'
 alias rgk='rk && gk'
 export ROS_CONFIG_DIR="$HOME/.config/ros"
@@ -46,6 +46,8 @@ alias cm='catkin_make'
 alias cmt='catkin_make run_tests'
 alias cmr='catkin_make -DCMAKE_BUILD_TYPE=release'
 alias cmi='catkin_make_isolated'
+# alias dr='bash $HOME/restart.bash'
+# alias dj='bash $HOME/join.bash'
 
 # Git aliases
 alias g='git'

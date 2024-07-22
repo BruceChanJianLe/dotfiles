@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Docker GO!
 # This script restarts and joins an exited container
 
 # Requirement:

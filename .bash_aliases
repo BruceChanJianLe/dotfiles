@@ -41,6 +41,7 @@ alias ccbr='colcon build --cmake-args -DCMAKE_BUILD_TYPE=release'
 alias ccbri='colcon build --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo'
 alias ccbrs='colcon build --cmake-args -DCMAKE_BUILD_TYPE=release --symlink-install'
 alias cct='colcon test --event-handlers console_direct+ --packages-select'
+alias cctc='GTEST_COLOR=1 colcon test --event-handlers console_direct+ --ctest-args -R "test" --packages-select'
 alias cb='catkin build'
 alias cbr='catkin build -DCMAKE_BUILD_TYPE=release'
 alias cm='catkin_make'
@@ -127,6 +128,7 @@ alias lg="ll | grep"
 alias eg="env | grep"
 alias hyperjump="source jump"
 alias file-permission='stat -c "%a %n"'
+alias autoenv='touch .autoenv.zsh .autoenv_leave.zsh'
 
 # i3
 alias lock='i3lock -c 000000'
@@ -141,8 +143,10 @@ elif test -n "$BASH_VERSION"; then
   bind -x '"\C-f": "tmux-sessionizer"'
   bind '"\C-k": "hyperjump\r"' # Hyperspace jump
 fi
-FZF_CONFIG_PATH=$HOME/.vim/plugged/fzf/shell/key-bindings.$SCRIPT_EXTENSION
-test -f $FZF_CONFIG_PATH && source $FZF_CONFIG_PATH
+FZF_KEYBIND_PATH=$HOME/.local/share/nvim/site/pack/packer/start/fzf/shell/key-bindings.$SCRIPT_EXTENSION
+FZF_COMP_PATH=$HOME/.local/share/nvim/site/pack/packer/start/fzf/shell/completion.$SCRIPT_EXTENSION
+test -f $FZF_KEYBIND_PATH && source $FZF_KEYBIND_PATH
+test -f $FZF_COMP_PATH && source $FZF_COMP_PATH
 
 P_ALIASES_PATH=$HOME/.config/p_aliases/.ssh_aliases
 test -f $P_ALIASES_PATH && source $P_ALIASES_PATH

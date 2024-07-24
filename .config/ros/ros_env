@@ -19,7 +19,8 @@ fi
 source /opt/ros/$ROS_VERSION/setup.$SCRIPT_EXTENSION
 source /usr/share/gazebo/setup.sh
 # Source setup if it's a workspace
-script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+# script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+script_dir="$PWD" # What a simple solution!
 if [[ -f "$script_dir/devel/setup.$SCRIPT_EXTENSION" ]]; then
   echo "Workspace sourced!"
   source $script_dir/devel/setup.$SCRIPT_EXTENSION

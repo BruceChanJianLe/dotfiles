@@ -66,7 +66,7 @@ alias gb='git branch'
 alias gp='git push'
 alias grm='git rm'
 alias gl='git log --graph --decorate'
-alias gls='git log --graph --decorate --oneline'
+alias gls="git log --graph --decorate --date=short --pretty=format:'%C(auto)%h %an %ad %s %d%Creset' --color"
 alias gd='git diff'
 alias gw='git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"'
 alias gf='git fetch'

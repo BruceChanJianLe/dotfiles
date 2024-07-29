@@ -50,6 +50,8 @@ alias cmr='catkin_make -DCMAKE_BUILD_TYPE=release'
 alias cmi='catkin_make_isolated'
 # alias dr='bash $HOME/restart.bash'
 # alias dj='bash $HOME/join.bash'
+alias mrccc20='cp $HOME/.config/mrccc/tasksdef_user.txt.ros1 $HOME/.config/mrccc/tasksdef_user.txt'
+alias mrccc22='cp $HOME/.config/mrccc/tasksdef_user.txt.ros2 $HOME/.config/mrccc/tasksdef_user.txt'
 
 # Git aliases
 alias g='git'

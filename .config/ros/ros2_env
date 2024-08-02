@@ -3,7 +3,7 @@
 
 if test $# -eq 0; then
   echo -e "The available distros are:\n=========================="
-  ls /opt/ros/ | grep -E 'dashing|eloquent|foxy|galactic|humble'
+  ls /opt/ros/ | grep -E 'dashing|eloquent|foxy|galactic|humble|iron'
   echo -e "\nFor example:\n============"
   echo -e "source ros2_env humble"
   return 1

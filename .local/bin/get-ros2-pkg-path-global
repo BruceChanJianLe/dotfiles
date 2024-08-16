@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+# This script jump to selected ros2 package path globally
+
+YELLOW='\033[0;33m'
+RED='\033[0;31m'
+RESET='\033[0m'
+
+# Sanity check for ROS2
+if [ -n "$ROS_VERSION" ] && [ "$ROS_VERSION" -eq 2 ]; then
+    # Prompt user to select
+    if [[ $# -eq 1 ]]; then
+      selected_pkg=$1
+    else
+      selected_pkg=$(ros2 pkg list 2> /dev/null | fzf)
+    fi
+else
+    echo -e "${RED}ROS2 is either not sourced or not equal to 2${RESET}"
+    return 1;
+fi
+
+# Exit if nothing is selected
+if [[ -z $selected_pkg ]]; then
+  echo -n ""
+  return 0
+fi
+
+# Obtain path to pkg
+selected_pkg_path=$(ros2 pkg prefix $selected_pkg)
+
+# Verify if pkg is from opt, print warning msg if true
+if grep -qs "/opt/ros/$ROS_DISTRO" <<< "$selected_pkg_path"; then
+  echo -e "${YELLOW}WARNING $selected_pkg resides in /opt/ros/$ROS_DISTRO!${RESET}"
+  cd $selected_pkg_path
+# Verify if pkg is from local workspace
+elif grep -qs "install" <<< "$selected_pkg_path"; then
+  workspace_dir=$(echo "$selected_pkg_path" | awk -F'/install/' '{print $1}')
+  filter_dir=$(find $workspace_dir'/src' -name 'package.xml' -exec dirname {} \; | grep $selected_pkg)
+  if [[ -z $filter_dir ]]; then
+    echo -e "${YELLOW}WARNING $selected_pkg resides in install dir!${RESET}"
+    # pkg resides only its install dir
+    cd "$selected_pkg_path"
+    return 0
+  else
+    cd "$filter_dir"
+    return 0
+  fi
+else
+  echo -e "${YELLOW}WARNING NEW CASE${RESET}"
+  cd "$selected_pkg_path"
+  return 0
+fi
+
+return 0

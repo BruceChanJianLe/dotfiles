@@ -18,6 +18,7 @@ alias ross='source $ROS_CONFIG_DIR/ros_env'
 alias ros='ross' # Keeping for your convenience :)
 alias drone='source $ROS_CONFIG_DIR/drone_env'
 alias drone2='source $ROS_CONFIG_DIR/drone_env2'
+alias eloquent='source $ROS_CONFIG_DIR/ros2_env eloquent'
 alias foxy='source $ROS_CONFIG_DIR/ros2_env foxy'
 alias galactic='source $ROS_CONFIG_DIR/ros2_env galactic'
 alias humble='source $ROS_CONFIG_DIR/ros2_env humble'
@@ -129,6 +130,7 @@ alias sbal="source $HOME/.bash_aliases"
 alias lg="ll | grep"
 alias eg="env | grep"
 alias hyperjump="source jump"
+alias ros2cd="source get-ros2-pkg-path-local"
 alias file-permission='stat -c "%a %n"'
 alias autoenv='touch .autoenv.zsh .autoenv_leave.zsh'
 

@@ -38,12 +38,10 @@ for item in "${unique_workspaces[@]}"; do
 
   # Append captured directories to the filter_dirs array
   filter_dirs+=("${dirs[@]}")
-
-  # filter_dir=$(find $item'/src' -name 'package.xml' -exec dirname {} \;)
-  # filter_dirs=("${(@f)$(find "$item/src" -name 'package.xml' -exec dirname {} \;)}")
-
-  # echo -n "$filter_dir\n"
 done
+
+# Ensure unique entries in filter_dirs
+filter_dirs=(${(u)filter_dirs})
 
 for dir in "${filter_dirs[@]}"; do
     # Get the basename of the directory

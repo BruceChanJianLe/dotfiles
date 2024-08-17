@@ -8,6 +8,7 @@ alias v='nvim'
 alias vims='nvim -S Session.vim'
 alias vis='nvim -S Session.vim'
 alias vs='nvim -S Session.vim'
+alias vil='nvim leetcode.nvim'
 
 # ROS
 alias gk="pkill -f gzclient; pkill -f gzserver; pkill -f gazebo; pkill -f 'gz sim'"

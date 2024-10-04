@@ -13,8 +13,9 @@ then
 else
   declare -n user=$1
   # Validate if user exist
-  # if [[ -v 'user[name]' && -v 'user[email]' ]]
-  if [[ -v 'user[@]' ]]
+
+  # if [[ -v 'user[@]' ]] # Fail to work on ubuntu24
+  if [[ -v 'user[name]' && -v 'user[email]' ]]
   then
     if [[ -n $2 && $2 == "local" ]]
     then

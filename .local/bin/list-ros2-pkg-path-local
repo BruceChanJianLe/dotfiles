@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/usr/bin/env zsh
 # This script list the local ros2 path local
 # Does not consider opt/ros
 

@@ -4,25 +4,39 @@
 # abort if we're already inside a TMUX session
 [ "$TMUX" == "" ] || exit 0
 
-# present menu for user to choose which workspace to open
-PS3="Please choose your session: "
-# shellcheck disable=SC2207
-IFS=$'\n' && options=("New Session" $(tmux -L yodalayheehoo list-sessions -F "#S" 2>/dev/null))
-echo "Available Sessions"
-echo "------------------"
-echo " "
-select opt in "${options[@]}"
-do
-  case $opt in
-    "New Session")
-      read -rp "Enter new session name: " SESSION_NAME
-      # tmux -f $HOME/.tmux.conf -L yodalayheehoo new -s "$SESSION_NAME"
-      tmux -L yodalayheehoo new -s "$SESSION_NAME"
-      break
-      ;;
-    *)
-      tmux -L yodalayheehoo attach-session -t "$opt"
-      break
-      ;;
-  esac
-done
+# Define new session function
+function start_new_session() {
+  # tmux -f $HOME/.tmux.conf -L yodalayheehoo new -s "$1"
+  tmux -L yodalayheehoo new -s "$1"
+}
+
+# Automatically start new session if no tmux session exist
+if [ -z $(tmux -L yodalayheehoo list-sessions -F "#S" 2>/dev/null) ]; then
+  echo "No Available Sessions"
+  echo "------------------"
+  echo " "
+  read -rp "Enter new session name: " SESSION_NAME
+  start_new_session $SESSION_NAME
+else
+  # present menu for user to choose which workspace to open
+  PS3="Please choose your session: "
+  # shellcheck disable=SC2207
+  IFS=$'\n' && options=("New Session" $(tmux -L yodalayheehoo list-sessions -F "#S" 2>/dev/null))
+  echo "Available Sessions"
+  echo "------------------"
+  echo " "
+  select opt in "${options[@]}"
+  do
+    case $opt in
+      "New Session")
+        read -rp "Enter new session name: " SESSION_NAME
+        start_new_session $SESSION_NAME
+        break
+        ;;
+      *)
+        tmux -L yodalayheehoo attach-session -t "$opt"
+        break
+        ;;
+    esac
+  done
+fi

@@ -14,6 +14,7 @@ EXTRA_SETUP="false"
 if test -n "$ZSH_VERSION"; then
   SCRIPT_EXTENSION="zsh"
   EXTRA_SETUP="true"
+  autoload -U +X bashcompinit && bashcompinit
 elif test -n "$BASH_VERSION"; then
   SCRIPT_EXTENSION="bash"
 fi
@@ -27,16 +28,23 @@ if [[ -f "$script_dir/install/setup.$SCRIPT_EXTENSION" ]]; then
   source $script_dir/install/setup.$SCRIPT_EXTENSION
 fi
 
-source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.$SCRIPT_EXTENSION
-source /usr/share/colcon_cd/function/colcon_cd.sh
-
 # gazebo classic no longer exist
 # source /usr/share/gazebo/setup.sh
 
-if [[ $EXTRA_SETUP == "true" ]]
+if [[ $EXTRA_SETUP == "true" && $ROS_DISTRO != "jazzy" ]]
 then
   eval "$(register-python-argcomplete3 ros2)"
   eval "$(register-python-argcomplete3 colcon)"
+
+  source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.$SCRIPT_EXTENSION
+  source /usr/share/colcon_cd/function/colcon_cd.sh
+elif [[ $EXTRA_SETUP == "true" && $ROS_DISTRO == "jazzy" ]]
+then
+  eval "$(register-python-argcomplete ros2)"
+  eval "$(register-python-argcomplete colcon)"
+
+  # source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.$SCRIPT_EXTENSION
+  source /usr/share/colcon_cd/function/colcon_cd-argcomplete.$SCRIPT_EXTENSION
 fi
 
 export RCUTILS_COLORIZED_OUTPUT=1

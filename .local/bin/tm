@@ -6,7 +6,7 @@
 
 # Define new session function
 function start_new_session() {
-  # tmux -f $HOME/.tmux.conf -L yodalayheehoo new -s "$1"
+  # tmux -f $HOME/.config/tmux/tmux.conf.cjl -L yodalayheehoo new -s "$1"
   tmux -L yodalayheehoo new -s "$1"
 }
 

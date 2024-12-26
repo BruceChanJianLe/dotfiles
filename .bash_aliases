@@ -148,6 +148,7 @@ elif test -n "$BASH_VERSION"; then
   # Duplications
   bind -x '"\C-f": "tmux-sessionizer"'
   bind '"\C-k": "hyperjump\r"' # Hyperspace jump
+  bind -x '"\ek": "tmux-run"' # Hyperspace jump
 fi
 FZF_KEYBIND_PATH=$HOME/.local/share/nvim/site/pack/packer/start/fzf/shell/key-bindings.$SCRIPT_EXTENSION
 FZF_COMP_PATH=$HOME/.local/share/nvim/site/pack/packer/start/fzf/shell/completion.$SCRIPT_EXTENSION

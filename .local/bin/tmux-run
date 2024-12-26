@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Fuzzy find your tmux sessions
+
+export GIT_CONFIG_DIR="$HOME/.config/git"
+source $GIT_CONFIG_DIR/working_dirs
+
+selected=$(find $SCRIPT_DIRS -mindepth 1 -maxdepth 1 -type f -executable 2> /dev/null | fzf)
+
+# Exit if nothing is selected
+if [[ -z $selected ]]; then
+  exit 0
+fi
+
+$selected

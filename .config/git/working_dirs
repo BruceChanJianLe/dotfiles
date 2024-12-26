@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 # Common working directories
-
 # Define my frequent working dirs
 export WORKING_DIRS="$HOME/references $HOME/reference $HOME/.config $HOME/ros1_ws $HOME/ros2_ws"
+
+# Common directories for script
+# Define my script dirs
+export SCRIPT_DIRS="$HOME/reference/tmux_conf $HOME/reference/tmux_conf.git/master $HOME/tmux_conf"
 
 # Define git directories to fetch
 export GIT_DIRS="$HOME/reference $HOME/.config $HOME/.config $HOME/ros1_ws $HOME/ros2_ws"

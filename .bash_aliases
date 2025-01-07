@@ -112,6 +112,11 @@ alias td='tmux detach-client'
 alias tsls='lsof -U | grep tmp/tmux'
 alias tj='tmux-jump'
 
+# Ghostty
+ghostty-ssh-setup() {
+  infocmp -x | ssh "$1" -- tic -x -
+}
+
 # Others
 alias sane='stty sane'
 alias gwd='pwd | xargs echo -n | xsel -i -b'

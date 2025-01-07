@@ -1,7 +1,6 @@
 font-family = UbuntuMono Nerd Font
 font-size = 13
 cursor-style = block
-shell-integration-features = no-cursor,sudo,no-title
 mouse-hide-while-typing = true
 
 background-opacity = 0.8
@@ -10,6 +9,9 @@ background-blur-radius = 20
 window-padding-color = background
 window-padding-balance = true
 macos-titlebar-style=transparent
+
+shell-intergration = zsh
+shell-integration-features = no-cursor,sudo,no-title
 
 # keybindings
 keybind = ctrl+space>r=reload_config

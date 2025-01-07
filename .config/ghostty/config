@@ -10,7 +10,7 @@ window-padding-color = background
 window-padding-balance = true
 macos-titlebar-style=transparent
 
-shell-intergration = zsh
+shell-integration = zsh
 shell-integration-features = no-cursor,sudo,no-title
 
 # keybindings

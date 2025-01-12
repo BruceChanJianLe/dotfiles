@@ -14,41 +14,41 @@ shell-integration = zsh
 shell-integration-features = no-cursor,sudo,no-title
 
 # keybindings
-keybind = ctrl+space>r=reload_config
-keybind = ctrl+space>x=close_surface
+keybind = ctrl+x>r=reload_config
+keybind = ctrl+x>x=close_surface
 
-keybind = ctrl+space>n=new_window
+keybind = ctrl+x>n=new_window
 
 # tabs 
-keybind = ctrl+space>c=new_tab
-keybind = ctrl+space>shift+l=next_tab
-keybind = ctrl+space>shift+h=previous_tab
-keybind = ctrl+space>comma=move_tab:-1
-keybind = ctrl+space>period=move_tab:1
+keybind = ctrl+x>c=new_tab
+keybind = ctrl+x>shift+l=next_tab
+keybind = ctrl+x>shift+h=previous_tab
+keybind = ctrl+x>comma=move_tab:-1
+keybind = ctrl+x>period=move_tab:1
 
 # quick tab switch
-keybind = ctrl+space>1=goto_tab:1
-keybind = ctrl+space>2=goto_tab:2
-keybind = ctrl+space>3=goto_tab:3
-keybind = ctrl+space>4=goto_tab:4
-keybind = ctrl+space>5=goto_tab:5
-keybind = ctrl+space>6=goto_tab:6
-keybind = ctrl+space>7=goto_tab:7
-keybind = ctrl+space>8=goto_tab:8
-keybind = ctrl+space>9=goto_tab:9
+keybind = ctrl+x>1=goto_tab:1
+keybind = ctrl+x>2=goto_tab:2
+keybind = ctrl+x>3=goto_tab:3
+keybind = ctrl+x>4=goto_tab:4
+keybind = ctrl+x>5=goto_tab:5
+keybind = ctrl+x>6=goto_tab:6
+keybind = ctrl+x>7=goto_tab:7
+keybind = ctrl+x>8=goto_tab:8
+keybind = ctrl+x>9=goto_tab:9
 
 # split
-keybind = ctrl+space>|=new_split:right
-keybind = ctrl+space>-=new_split:down
+keybind = ctrl+x>|=new_split:right
+keybind = ctrl+x>-=new_split:down
 
-keybind = ctrl+space>j=goto_split:bottom
-keybind = ctrl+space>k=goto_split:top
-keybind = ctrl+space>h=goto_split:left
-keybind = ctrl+space>l=goto_split:right
+keybind = ctrl+x>j=goto_split:bottom
+keybind = ctrl+x>k=goto_split:top
+keybind = ctrl+x>h=goto_split:left
+keybind = ctrl+x>l=goto_split:right
 
-keybind = ctrl+space>z=toggle_split_zoom
+keybind = ctrl+x>z=toggle_split_zoom
 
-keybind = ctrl+space>e=equalize_splits
+keybind = ctrl+x>e=equalize_splits
 
 # other
 copy-on-select = clipboard

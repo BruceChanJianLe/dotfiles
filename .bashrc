@@ -60,7 +60,6 @@ parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-  exec zsh
 fi
 if [ "$color_prompt" = yes ]; then
   if [[ -n "$IN_DOCKER" && "$IN_DOCKER" == "1" ]]; then

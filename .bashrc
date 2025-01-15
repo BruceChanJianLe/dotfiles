@@ -130,6 +130,6 @@ fi
 # fi
 
 # Start ZSH like so due to the nature of docker
-if [[ -n "$IN_DOCKER" && "$IN_DOCKER" == "1" && -x "$(command -v zsh)" ]]; then
-  exec zsh
-fi
+# if [[ -n "$IN_DOCKER" && "$IN_DOCKER" == "1" && -x "$(command -v zsh)" ]]; then
+#   exec zsh
+# fi

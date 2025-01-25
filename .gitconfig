@@ -15,3 +15,5 @@
 	tool = meld
 [core]
 	editor = nvim
+[init]
+	defaultBranch = master

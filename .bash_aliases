@@ -140,9 +140,9 @@ alias sbal="source $HOME/.bash_aliases"
 alias lg="ll | grep"
 alias eg="env | grep"
 alias hyperjump="source jump"
-alias ros2cd="source get-ros2-pkg-path-local"
 alias file-permission='stat -c "%a %n"'
 alias autoenv='touch .autoenv.zsh .autoenv_leave.zsh'
+alias mm='micromamba'
 
 # i3
 alias lock='i3lock -c 000000'

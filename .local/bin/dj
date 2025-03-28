@@ -32,7 +32,7 @@ read -p "Container name to be connected: " CONTAINERNAME
 
 if [[ -z ${arr[$CONTAINERNAME]} ]]
 then
-    docker exec --privileged -e DISPLAY=${DISPLAY} -ti $CONTAINERNAME zsh
+    docker exec --privileged -e IN_DOCKER=1 -e DISPLAY=${DISPLAY} -ti $CONTAINERNAME zsh
 else
-    docker exec --privileged -e DISPLAY=${DISPLAY} -ti ${arr[$CONTAINERNAME]} zsh
+    docker exec --privileged -e IN_DOCKER=1 -e DISPLAY=${DISPLAY} -ti ${arr[$CONTAINERNAME]} zsh
 fi

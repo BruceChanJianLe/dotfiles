@@ -168,3 +168,6 @@ test -f $P_ALIASES_PATH && source $P_ALIASES_PATH
 
 # enable rust
 alias rust="source $HOME/.cargo/env"
+
+# qemu
+alias start_u24="qemu-system-x86_64 -enable-kvm -boot menu=on -drive file=$HOME/reference/qemu_images/u24.img -m 6G -cpu host -vga virtio -display sdl,gl=on -nic user,hostfwd=tcp::4321-:22"

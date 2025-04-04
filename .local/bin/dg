@@ -63,5 +63,5 @@ then
   exit 1
 else
   docker start ${arr[$CONTAINERNAME]}
-  docker exec --privileged -e DISPLAY=${DISPLAY} -ti ${arr[$CONTAINERNAME]} bash
+  docker exec --privileged -e DISPLAY=${DISPLAY} -ti ${arr[$CONTAINERNAME]} zsh
 fi

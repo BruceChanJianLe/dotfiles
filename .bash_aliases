@@ -59,6 +59,8 @@ alias cmi='catkin_make_isolated'
 # alias dj='bash $HOME/join.bash'
 alias mrccc20='cp $HOME/.config/mrccc/tasksdef_user.txt.ros1 $HOME/.config/mrccc/tasksdef_user.txt'
 alias mrccc22='cp $HOME/.config/mrccc/tasksdef_user.txt.ros2 $HOME/.config/mrccc/tasksdef_user.txt'
+alias mrccc1='mrccc20'
+alias mrccc2='mrccc22'
 
 # Git aliases
 alias g='git'
@@ -142,6 +144,8 @@ alias eg="env | grep"
 alias hyperjump="source jump"
 alias file-permission='stat -c "%a %n"'
 alias autoenv='touch .autoenv.zsh .autoenv_leave.zsh'
+alias ae='autoenv'
+alias aed='autoenv-edit'
 alias mm='micromamba'
 
 # i3

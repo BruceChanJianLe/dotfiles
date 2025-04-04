@@ -142,6 +142,8 @@ alias eg="env | grep"
 alias hyperjump="source jump"
 alias file-permission='stat -c "%a %n"'
 alias autoenv='touch .autoenv.zsh .autoenv_leave.zsh'
+alias ae='autoenv'
+alias aed='autoenv-edit'
 alias mm='micromamba'
 
 # i3

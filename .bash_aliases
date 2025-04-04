@@ -59,6 +59,8 @@ alias cmi='catkin_make_isolated'
 # alias dj='bash $HOME/join.bash'
 alias mrccc20='cp $HOME/.config/mrccc/tasksdef_user.txt.ros1 $HOME/.config/mrccc/tasksdef_user.txt'
 alias mrccc22='cp $HOME/.config/mrccc/tasksdef_user.txt.ros2 $HOME/.config/mrccc/tasksdef_user.txt'
+alias mrccc1='mrccc20'
+alias mrccc2='mrccc22'
 
 # Git aliases
 alias g='git'

@@ -146,6 +146,7 @@ alias file-permission='stat -c "%a %n"'
 alias autoenv='touch .autoenv.zsh .autoenv_leave.zsh'
 alias ae='autoenv'
 alias aed='autoenv-edit'
+alias audio='alsamixer -c 0' # select the 0th card
 alias mm='micromamba'
 
 # i3

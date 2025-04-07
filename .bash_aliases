@@ -144,6 +144,18 @@ alias file-permission='stat -c "%a %n"'
 alias autoenv='touch .autoenv.zsh .autoenv_leave.zsh'
 alias mm='micromamba'
 
+# Handy function to add host entry
+# usage: add_host_entry yoga
+add_host_entry() {
+    local hostname=$1
+    if [ -z "$hostname" ]; then
+        echo "Please provide a hostname."
+    else
+        echo -e "127.0.0.1 localhost\n127.0.1.1 $hostname" | sudo tee -a /etc/hosts > /dev/null
+        echo "Added $hostname to /etc/hosts"
+    fi
+}
+
 # i3
 alias lock='i3lock -c 000000'
 

@@ -59,6 +59,8 @@ alias cmi='catkin_make_isolated'
 # alias dj='bash $HOME/join.bash'
 alias mrccc20='cp $HOME/.config/mrccc/tasksdef_user.txt.ros1 $HOME/.config/mrccc/tasksdef_user.txt'
 alias mrccc22='cp $HOME/.config/mrccc/tasksdef_user.txt.ros2 $HOME/.config/mrccc/tasksdef_user.txt'
+alias mrccc1='mrccc20'
+alias mrccc2='mrccc22'
 
 # Git aliases
 alias g='git'
@@ -142,6 +144,9 @@ alias eg="env | grep"
 alias hyperjump="source jump"
 alias file-permission='stat -c "%a %n"'
 alias autoenv='touch .autoenv.zsh .autoenv_leave.zsh'
+alias ae='autoenv'
+alias aed='autoenv-edit'
+alias audio='alsamixer -c 0' # select the 0th card
 alias mm='micromamba'
 
 # Handy function to add host entry
@@ -180,3 +185,7 @@ test -f $P_ALIASES_PATH && source $P_ALIASES_PATH
 
 # enable rust
 alias rust="source $HOME/.cargo/env"
+
+# qemu
+alias u24="qemu-system-x86_64 -enable-kvm -boot menu=on -drive file=$HOME/reference/qemu_images/u24.img -m 6G -cpu host -vga virtio -display sdl,gl=on -nic user,hostfwd=tcp::4321-:22 -virtfs local,path=$HOME/reference/docker-nvidia-ubuntu-ros.git/master/docker_mount/qfiles,mount_tag=qfiles,security_model=none"
+alias u24h="qemu-system-x86_64 -enable-kvm -drive file=$HOME/reference/qemu_images/u24.img -nographic -m 6G -cpu host -nic user,hostfwd=tcp::4321-:22 -virtfs local,path=$HOME/reference/docker-nvidia-ubuntu-ros.git/master/docker_mount/qfiles,mount_tag=qfiles,security_model=none"

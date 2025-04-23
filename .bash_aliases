@@ -180,8 +180,9 @@ FZF_COMP_PATH=$HOME/.local/share/nvim/site/pack/packer/start/fzf/shell/completio
 test -f $FZF_KEYBIND_PATH && source $FZF_KEYBIND_PATH
 test -f $FZF_COMP_PATH && source $FZF_COMP_PATH
 
-P_ALIASES_PATH=$HOME/.config/p_aliases/.ssh_aliases
-test -f $P_ALIASES_PATH && source $P_ALIASES_PATH
+P_ALIASES_PATH=$HOME/.config/p_aliases/
+test -f $P_ALIASES_PATH".ssh_aliases" && source $P_ALIASES_PATH".ssh_aliases"
+test -f $P_ALIASES_PATH".bash_aliases" && source $P_ALIASES_PATH".bash_aliases"
 
 # enable rust
 alias rust="source $HOME/.cargo/env"

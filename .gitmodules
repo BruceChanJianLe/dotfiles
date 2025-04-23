@@ -7,3 +7,6 @@
 [submodule ".config/zsh"]
 	path = .config/zsh
 	url = https://github.com/BruceChanJianLe/zsh.git
+[submodule ".config/ghostty"]
+	path = .config/ghostty
+	url = https://github.com/BruceChanJianLe/ghostty.git

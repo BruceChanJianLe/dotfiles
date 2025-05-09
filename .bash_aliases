@@ -37,9 +37,10 @@ alias rtg="rostopic list | grep "
 alias ros2cd="source get-ros2-pkg-path-local"
 
 # VPN
-alias vpn='/opt/cisco/anyconnect/bin/vpn  connect nexus.a-star.edu.sg'
-alias vpnd='/opt/cisco/anyconnect/bin/vpn disconnect'
-alias vpns='/opt/cisco/anyconnect/bin/vpn state'
+# prev path: /opt/cisco/anyconnect/bin/vpn
+alias vpn='/opt/cisco/secureclient/bin/vpn  connect nexus.a-star.edu.sg'
+alias vpnd='/opt/cisco/secureclient/bin/vpn disconnect'
+alias vpns='/opt/cisco/secureclient/bin/vpn state'
 
 # Bri's Favourite Aliases
 alias ccb='colcon build'

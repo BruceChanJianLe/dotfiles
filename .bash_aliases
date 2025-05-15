@@ -193,5 +193,5 @@ test -f $P_ALIASES_PATH".bash_aliases" && source $P_ALIASES_PATH".bash_aliases"
 alias rust="source $HOME/.cargo/env"
 
 # qemu
-alias u24="qemu-system-x86_64 -enable-kvm -boot menu=on -drive file=$HOME/reference/qemu_images/u24.img -m 6G -smp 4 -cpu host -vga virtio -display sdl,gl=on -nic user,hostfwd=tcp::4321-:22 -virtfs local,path=$HOME/reference/docker-nvidia-ubuntu-ros.git/master/docker_mount/qfiles,mount_tag=qfiles,security_model=none"
-alias u24h="qemu-system-x86_64 -enable-kvm -drive file=$HOME/reference/qemu_images/u24.img -nographic -m 6G -smp 4 -cpu host -nic user,hostfwd=tcp::4321-:22 -virtfs local,path=$HOME/reference/docker-nvidia-ubuntu-ros.git/master/docker_mount/qfiles,mount_tag=qfiles,security_model=none"
+alias u24="qemu-system-x86_64 -enable-kvm -boot menu=on -drive file=$HOME/reference/qemu_images/u24.img -m 6G -smp 8 -cpu host -vga virtio -display sdl,gl=on -nic user,hostfwd=tcp::4321-:22 -virtfs local,path=$HOME/reference/docker-nvidia-ubuntu-ros.git/master/docker_mount/qfiles,mount_tag=qfiles,security_model=none"
+alias u24h="qemu-system-x86_64 -enable-kvm -drive file=$HOME/reference/qemu_images/u24.img -nographic -m 6G -smp 8 -cpu host -nic user,hostfwd=tcp::4321-:22 -virtfs local,path=$HOME/reference/docker-nvidia-ubuntu-ros.git/master/docker_mount/qfiles,mount_tag=qfiles,security_model=none"

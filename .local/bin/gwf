@@ -7,5 +7,9 @@ then
   echo "Usage: gwf file.txt"
   exit 0
 else
-  realpath $1 | xargs echo -n | xsel -i -b
+  if [ -n "$WAYLAND_DISPLAY" ]; then
+    realpath $1 | xargs echo -n | wl-copy
+  else
+    realpath $1 | xargs echo -n | xsel -i -b
+  fi
 fi

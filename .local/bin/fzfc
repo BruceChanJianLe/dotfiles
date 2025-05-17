@@ -52,4 +52,8 @@ parse_params() {
 parse_params "$@"
 
 # Implementation
-fzf | xargs echo -n | xsel -i -b
+if [ -n "$WAYLAND_DISPLAY" ]; then
+  fzf | xargs echo -n | wl-copy
+else
+  fzf | xargs echo -n | xsel -i -b
+fi

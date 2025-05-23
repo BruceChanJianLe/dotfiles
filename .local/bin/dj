@@ -32,7 +32,15 @@ read -p "Container name to be connected: " CONTAINERNAME
 
 if [[ -z ${arr[$CONTAINERNAME]} ]]
 then
-    docker exec --privileged -e IN_DOCKER=1 -e DISPLAY=${DISPLAY} -ti $CONTAINERNAME zsh
+    if [ -n "$WAYLAND_DISPLAY" ]; then
+      docker exec --privileged -e IN_DOCKER=1 -e DISPLAY=${DISPLAY} -e WAYLAND_DISPLAY=/tmp/${WAYLAND_DISPLAY}  -ti $CONTAINERNAME zsh
+    else
+      docker exec --privileged -e IN_DOCKER=1 -e DISPLAY=${DISPLAY} -ti $CONTAINERNAME zsh
+    fi
 else
-    docker exec --privileged -e IN_DOCKER=1 -e DISPLAY=${DISPLAY} -ti ${arr[$CONTAINERNAME]} zsh
+    if [ -n "$WAYLAND_DISPLAY" ]; then
+      docker exec --privileged -e IN_DOCKER=1 -e DISPLAY=${DISPLAY} -e WAYLAND_DISPLAY=/tmp/${WAYLAND_DISPLAY} -ti ${arr[$CONTAINERNAME]} zsh
+    else
+      docker exec --privileged -e IN_DOCKER=1 -e DISPLAY=${DISPLAY} -ti ${arr[$CONTAINERNAME]} zsh
+    fi
 fi

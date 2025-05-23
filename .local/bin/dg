@@ -63,5 +63,10 @@ then
   exit 1
 else
   docker start ${arr[$CONTAINERNAME]}
-  docker exec --privileged -e DISPLAY=${DISPLAY} -ti ${arr[$CONTAINERNAME]} zsh
+
+  if [ -n "$WAYLAND_DISPLAY" ]; then
+    docker exec --privileged -e DISPLAY=${DISPLAY} -e WAYLAND_DISPLAY=/tmp/${WAYLAND_DISPLAY} -ti ${arr[$CONTAINERNAME]} zsh
+  else
+    docker exec --privileged -e DISPLAY=${DISPLAY} -ti ${arr[$CONTAINERNAME]} zsh
+  fi
 fi

@@ -36,8 +36,8 @@ then
   eval "$(register-python-argcomplete3 ros2)"
   eval "$(register-python-argcomplete3 colcon)"
 
-  source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.$SCRIPT_EXTENSION
-  source /usr/share/colcon_cd/function/colcon_cd.sh
+  # source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.$SCRIPT_EXTENSION
+  # source /usr/share/colcon_cd/function/colcon_cd.sh
 elif [[ $EXTRA_SETUP == "true" && $ROS_DISTRO == "jazzy" ]]
 then
   eval "$(register-python-argcomplete ros2)"

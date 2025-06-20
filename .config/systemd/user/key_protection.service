@@ -1,0 +1,11 @@
+[Unit]
+Description=Ensure keys are protected
+DefaultDependencies=no
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash -ic 'rm /home/%i/.ssh/id_bri /home/%i/.ssh/id_cjl'
+
+[Install]
+WantedBy=shutdown.target

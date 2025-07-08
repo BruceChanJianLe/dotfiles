@@ -5,7 +5,7 @@ Before=shutdown.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/bash -ic 'rm $HOME/.ssh/id_bri $HOME/.ssh/id_cjl'
+ExecStart=/usr/bin/bash -c 'rm %h/.ssh/id_bri %h/.ssh/id_cjl'
 
 [Install]
 WantedBy=shutdown.target

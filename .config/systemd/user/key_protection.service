@@ -1,5 +1,5 @@
 [Unit]
-Description=Ensure keys are protected
+Description=key protection service
 DefaultDependencies=no
 Before=shutdown.target
 

@@ -1,0 +1,9 @@
+[Unit]
+Description=boot up key protection service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash -c 'rm %h/.ssh/id_bri %h/.ssh/id_cjl'
+
+[Install]
+WantedBy=default.target

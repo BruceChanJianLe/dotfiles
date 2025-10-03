@@ -8,7 +8,7 @@
 # https://www.reinteractive.net/posts/167-ansible-real-life-good-practices
 # Take from: https://gist.github.com/leucos/a9f42e111a8cfc2ebf6e
 # File should be .git/hooks/pre-commit and executable
-FILES_PATTERN='id_cjl|id_bri|brave'
+FILES_PATTERN='id_cjl|id_bri|brave|atlassian_rec_key'
 REQUIRED='ANSIBLE_VAULT'
 
 EXIT_STATUS=0

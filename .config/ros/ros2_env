@@ -3,7 +3,7 @@
 
 if test $# -eq 0; then
   echo -e "The available distros are:\n=========================="
-  ls /opt/ros/ | grep -E 'dashing|eloquent|foxy|galactic|humble|iron'
+  ls /opt/ros/ | grep -E 'dashing|eloquent|foxy|galactic|humble|iron|jazzy|kilted|rolling'
   echo -e "\nFor example:\n============"
   echo -e "source ros2_env humble"
   return 1
@@ -30,19 +30,21 @@ fi
 
 # gazebo classic no longer exist
 # source /usr/share/gazebo/setup.sh
+#
+# if [[ $EXTRA_SETUP == "true" && $ROS_DISTRO != "jazzy" ]]
+# then
+#   eval "$(register-python-argcomplete3 ros2)"
+#   eval "$(register-python-argcomplete3 colcon)"
+#   # source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.$SCRIPT_EXTENSION
+#   # source /usr/share/colcon_cd/function/colcon_cd.sh
+# elif [[ $EXTRA_SETUP == "true" && $ROS_DISTRO == "jazzy" ]]
+# then
+#   eval "$(register-python-argcomplete ros2)"
+#   eval "$(register-python-argcomplete colcon)"
+# fi
 
-if [[ $EXTRA_SETUP == "true" && $ROS_DISTRO != "jazzy" ]]
-then
-  eval "$(register-python-argcomplete3 ros2)"
-  eval "$(register-python-argcomplete3 colcon)"
-
-  # source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.$SCRIPT_EXTENSION
-  # source /usr/share/colcon_cd/function/colcon_cd.sh
-elif [[ $EXTRA_SETUP == "true" && $ROS_DISTRO == "jazzy" ]]
-then
-  eval "$(register-python-argcomplete ros2)"
-  eval "$(register-python-argcomplete colcon)"
-fi
+eval "$(register-python-argcomplete ros2)"
+eval "$(register-python-argcomplete colcon)"
 
 export RCUTILS_COLORIZED_OUTPUT=1
 

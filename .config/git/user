@@ -2,5 +2,5 @@
 # This file holds the list for git user profiles
 
 declare -A bri=( ["name"]="Brina Shong"  ["email"]="shongwtb@i2r.a-star.edu.sg" )
-declare -A cjl=( ["name"]="Chan Jian Le" ["email"]="chanjl@i2r.a-star.edu.sg" )
+declare -A cjl=( ["name"]="Chan Jian Le" ["email"]="chan_jian_le@htx.gov.sg" )
 declare -A nur=( ["name"]="Nursultan Imanberdiyev" ["email"]="nursultani@i2r.a-star.edu.sg" )

@@ -56,9 +56,8 @@
     in
     {
       homeConfigurations = {
-        "chanjl" = mkUser "chanjl";
-        "brina" = mkUser "brina";
         "developer" = mkUser "developer";
+        "chanjl" = mkUser "chanjl";
       };
     };
 }

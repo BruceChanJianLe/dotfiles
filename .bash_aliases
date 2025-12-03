@@ -33,7 +33,7 @@ alias eros='nvim $ROS_CONFIG_DIR/ros_env'
 alias eross='nvim $ROS_CONFIG_DIR/../p_aliases/ros_setup'
 alias eros2='nvim $ROS_CONFIG_DIR/ros2_env'
 alias eross2='nvim $ROS_CONFIG_DIR/../p_aliases/ros2_setup'
-alias rtg="rostopic list | grep "
+alias rtg="ros2 topic list | grep "
 alias ros2cd="source get-ros2-pkg-path-local"
 
 # VPN

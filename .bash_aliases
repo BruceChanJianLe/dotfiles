@@ -14,7 +14,7 @@ alias tmb="sed -i -E 's/google-chrome/brave-browser/;t; s/brave-browser/google-c
 
 # ROS
 alias gk="pkill -f gzclient; pkill -f gzserver; pkill -f gazebo; pkill -f 'gz sim'"
-alias rk='for i in $(pgrep -f ros/$ROS_DISTRO); do kill $i; done; pkill -f ros-args; pkill -f rviz'
+alias rk='for i in $(pgrep -f ros/$ROS_DISTRO); do kill $i; done; pkill -f ros-args; pkill -f rviz; pkill -f ros2cli.daemon'
 alias rgk='rk && gk'
 export ROS_CONFIG_DIR="$HOME/.config/ros"
 alias ross='source $ROS_CONFIG_DIR/ros_env'

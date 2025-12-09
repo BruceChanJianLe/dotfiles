@@ -156,6 +156,7 @@ alias ae='autoenv'
 alias aed='autoenv-edit'
 alias audio='alsamixer -c 0' # select the 0th card
 alias mm='micromamba'
+alias bat='bat --theme="Visual Studio Dark+" '
 
 # Handy function to add host entry
 # usage: add_host_entry yoga

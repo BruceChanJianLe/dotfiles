@@ -15,6 +15,7 @@
   home.packages = [
     pkgs.htop-vim
     pkgs.pixi
+    pkgs.bat
     # pkgs.micromamba
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

@@ -36,11 +36,12 @@ alias eross2='nvim $ROS_CONFIG_DIR/../p_aliases/ros2_setup'
 alias rtg="ros2 topic list | grep "
 alias ros2cd="source get-ros2-pkg-path-local"
 
-# VPN
+# VPN and Network Tools
 # prev path: /opt/cisco/anyconnect/bin/vpn
 alias vpn='/opt/cisco/secureclient/bin/vpn  connect nexus.a-star.edu.sg'
 alias vpnd='/opt/cisco/secureclient/bin/vpn disconnect'
 alias vpns='/opt/cisco/secureclient/bin/vpn state'
+alias ip='ip -c'
 
 # Bri's Favourite Aliases
 alias ccb='colcon build'

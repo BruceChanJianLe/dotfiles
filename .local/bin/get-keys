@@ -4,3 +4,7 @@ echo "Cloning keys..."
 wget -O $HOME/.ssh/id_bri https://raw.githubusercontent.com/BruceChanJianLe/ansible/refs/heads/master/.ssh/id_bri > /dev/null 2>&1
 wget -O $HOME/.ssh/id_cjl https://raw.githubusercontent.com/BruceChanJianLe/ansible/refs/heads/master/.ssh/id_cjl > /dev/null 2>&1
 chmod 600 $HOME/.ssh/id_bri $HOME/.ssh/id_cjl
+
+wget -O $HOME/.ssh/id_bri.pub https://raw.githubusercontent.com/BruceChanJianLe/ansible/refs/heads/master/.ssh/id_bri.pub > /dev/null 2>&1
+wget -O $HOME/.ssh/id_cjl.pub https://raw.githubusercontent.com/BruceChanJianLe/ansible/refs/heads/master/.ssh/id_cjl.pub > /dev/null 2>&1
+chmod 644 $HOME/.ssh/id_bri.pub $HOME/.ssh/id_cjl.pub

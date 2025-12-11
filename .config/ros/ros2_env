@@ -19,13 +19,14 @@ elif test -n "$BASH_VERSION"; then
   SCRIPT_EXTENSION="bash"
 fi
 
-source /opt/ros/$1/setup.$SCRIPT_EXTENSION
 # Source setup if it's a workspace
 # script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
 script_dir="$PWD" # What a simple solution!
 if [[ -f "$script_dir/install/setup.$SCRIPT_EXTENSION" ]]; then
   echo "Workspace sourced!"
   source $script_dir/install/setup.$SCRIPT_EXTENSION
+else
+  source /opt/ros/$1/setup.$SCRIPT_EXTENSION
 fi
 
 # gazebo classic no longer exist
@@ -43,6 +44,14 @@ else
 fi
 
 export RCUTILS_COLORIZED_OUTPUT=1
+export ROS_DOMAIN_ID=0
+
+# Uncomment to use zenoh
+# more about that here: https://github.com/BruceChanJianLe/ros2-rmw
+# export RMW_IMPLEMENTATION=rmw_zenoh_cpp
+
+# export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+# export CYCLONEDDS_URI=file://$HOME/cyclonedds.xml
 
 ROS2_SETUP_PATH=$HOME/.config/p_aliases/ros2_setup
 test -f $ROS2_SETUP_PATH && source $ROS2_SETUP_PATH

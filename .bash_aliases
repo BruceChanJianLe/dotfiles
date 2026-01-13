@@ -131,6 +131,12 @@ ssh-clean() {
 }
 
 # Others
+alias rosh='source /opt/ros/jazzy/setup.bash'
+alias b60='asusctl -c 60'
+alias b80='asusctl -c 80'
+alias b100='asusctl -c 100'
+alias bs='cat /sys/class/power_supply/BAT1/status && cat /sys/class/power_supply/BAT1/charge_control_end_threshold'
+
 alias sane='stty sane'
 alias gwd='pwd | xargs echo -n | xsel -i -b'
 alias copyfile='xsel -i -b < '

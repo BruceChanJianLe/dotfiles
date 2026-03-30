@@ -125,6 +125,10 @@ alias tj='tmux-jump'
 ghostty-ssh-setup() {
   infocmp -x | ssh "$1" -- tic -x -
 }
+# a more user friendly
+ssh-ghostty-setup() {
+  infocmp -x | ssh "$1" -- tic -x -
+}
 ssh-clean() {
   # usage: ssh-clean 192.168.0.150
   ssh-keygen -f "$HOME/.ssh/known_hosts" -R "$1"

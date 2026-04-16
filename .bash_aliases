@@ -41,6 +41,8 @@ alias ros2cd="source get-ros2-pkg-path-local"
 alias vpn='/opt/cisco/secureclient/bin/vpn  connect nexus.a-star.edu.sg'
 alias vpnd='/opt/cisco/secureclient/bin/vpn disconnect'
 alias vpns='/opt/cisco/secureclient/bin/vpn state'
+alias fvpns='forticlient vpn status'
+alias fvpnd='forticlient vpn disconnect'
 alias ip='ip -c'
 
 # Bri's Favourite Aliases

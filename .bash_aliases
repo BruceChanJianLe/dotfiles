@@ -124,13 +124,17 @@ alias td='tmux detach-client'
 alias tsls='lsof -U | grep tmp/tmux'
 alias tj='tmux-jump'
 
-# Ghostty
+# Ghostty, usage: ssh-ghostty-setup developer@192.168.xxx.xxx
 ghostty-ssh-setup() {
   infocmp -x | ssh "$1" -- tic -x -
 }
 # a more user friendly
 ssh-ghostty-setup() {
   infocmp -x | ssh "$1" -- tic -x -
+}
+# openshift setup, $1 is the pod's name
+ssh-ghostty-setup() {
+  infocmp -x | oc exec -i "$1" -- tic -x -
 }
 ssh-clean() {
   # usage: ssh-clean 192.168.0.150

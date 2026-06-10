@@ -91,6 +91,7 @@ alias gse='gsa eli local'
 alias gsj='gsa ljm local'
 alias gsx='gsa nxy local'
 alias gr='cd $(git rev-parse --show-toplevel)'
+alias grr='cd $(git rev-parse --show-superproject-working-tree)'
 alias gu='git-fetch-all'
 
 # Dotfiles

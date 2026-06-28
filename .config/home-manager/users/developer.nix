@@ -14,8 +14,12 @@
   # environment.
   home.packages = [
     pkgs.htop-vim
-    pkgs.pixi
     pkgs.bat
+    pkgs.cmake-language-server
+    pkgs.gdown
+    pkgs.gh
+    pkgs.yt-dlp
+    pkgs.python3Packages.openusd
     # pkgs.micromamba
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

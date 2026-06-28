@@ -20,7 +20,6 @@
   # environment.
   home.packages = [
     pkgs.neofetch
-    pkgs.pixi
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

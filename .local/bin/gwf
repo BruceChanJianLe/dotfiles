@@ -1,15 +1,21 @@
 #!/usr/bin/env bash
 # This script get the absolute path 
 # to the provided file into system clipboard.
+# v2 does not check for wayland and prints out path if all fails
 
-if [ -z "$1" ]
-then
+if [ -z "$1" ]; then
+  echo "gwf v2.0"
   echo "Usage: gwf file.txt"
   exit 0
+fi
+
+path=$(realpath "$1")
+
+if command -v wl-copy >/dev/null 2>&1 && echo -n "$path" | wl-copy 2>/dev/null; then
+  : # copied successfully via wl-copy
+elif command -v xsel >/dev/null 2>&1 && echo -n "$path" | xsel -i -b 2>/dev/null; then
+  : # copied successfully via xsel
 else
-  if [ -n "$WAYLAND_DISPLAY" ]; then
-    realpath $1 | xargs echo -n | wl-copy
-  else
-    realpath $1 | xargs echo -n | xsel -i -b
-  fi
+  echo "Copy to clipboard failed."
+  echo $path"
 fi

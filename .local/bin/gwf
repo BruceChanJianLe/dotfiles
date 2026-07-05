@@ -17,5 +17,5 @@ elif command -v xsel >/dev/null 2>&1 && echo -n "$path" | xsel -i -b 2>/dev/null
   : # copied successfully via xsel
 else
   echo "Copy to clipboard failed."
-  echo $path"
+  echo $path
 fi

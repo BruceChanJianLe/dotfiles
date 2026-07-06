@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # This script get the absolute path 
 # to the provided file into system clipboard.
+# v1 leverage on wl-copy and xsel
 # v2 does not check for wayland and prints out path if all fails
+# v3 works with ghostty
 
 if [ -z "$1" ]; then
   echo "gwf v2.0"
@@ -9,13 +11,26 @@ if [ -z "$1" ]; then
   exit 0
 fi
 
+# Trigger ghostty clipboard
+gcopy() {
+  local data
+  data=$(base64 <<< "${1:-$(cat)}" | tr -d '\n')
+  if [[ -n "$TMUX" ]]; then
+    printf '\ePtmux;\e\e]52;c;%s\a\e\\' "$data"
+  else
+    printf '\e]52;c;%s\a' "$data"
+  fi
+}
+
 path=$(realpath "$1")
 
 if command -v wl-copy >/dev/null 2>&1 && echo -n "$path" | wl-copy 2>/dev/null; then
   : # copied successfully via wl-copy
 elif command -v xsel >/dev/null 2>&1 && echo -n "$path" | xsel -i -b 2>/dev/null; then
   : # copied successfully via xsel
+elif echo -n "$path" | gcopy 2>/dev/null; then
+  : # copied via ghostty
 else
-  echo "Copy to clipboard failed."
+  echo "Copy to clipboard failed..."
   echo $path
 fi

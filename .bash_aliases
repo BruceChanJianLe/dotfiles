@@ -134,7 +134,7 @@ ssh-ghostty-setup() {
   infocmp -x | ssh "$1" -- tic -x -
 }
 # openshift setup, $1 is the pod's name
-ssh-ghostty-setup() {
+oc-ghostty-setup() {
   infocmp -x | oc exec -i "$1" -- tic -x -
 }
 ssh-clean() {

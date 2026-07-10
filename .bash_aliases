@@ -150,7 +150,7 @@ alias b100='asusctl -c 100'
 alias bs='cat /sys/class/power_supply/BAT1/status && cat /sys/class/power_supply/BAT1/charge_control_end_threshold'
 
 alias sane='stty sane'
-alias gwd='pwd | xargs echo -n | xsel -i -b'
+alias gwd='pwd | xargs echo -n | xargs gwf'
 alias copyfile='xsel -i -b < '
 alias cls='clear; ls'
 alias cll='clear; ll'

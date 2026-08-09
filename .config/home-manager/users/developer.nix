@@ -19,6 +19,7 @@
     pkgs.gdown
     pkgs.gh
     pkgs.yt-dlp
+    pkgs.showmethekey
     pkgs.python3Packages.openusd
     # pkgs.micromamba
     # # Adds the 'hello' command to your environment. It prints a friendly

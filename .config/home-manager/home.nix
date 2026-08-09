@@ -1,4 +1,4 @@
-# Not being used not
+# Not being used, single user configuration
 { config, pkgs, ... }:
 
 {

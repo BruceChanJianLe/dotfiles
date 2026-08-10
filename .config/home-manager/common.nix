@@ -3,7 +3,7 @@
 {
   # Shared packages across all users
   home.packages = [
-    pkgs.neofetch
+    pkgs.bat
   ];
 
   # Let Home Manager install and manage itself.

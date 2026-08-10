@@ -8,19 +8,19 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "25.11"; # Please read the comment before changing.
+  home.stateVersion = "26.05"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
     pkgs.htop-vim
-    pkgs.bat
     pkgs.cmake-language-server
     pkgs.gdown
     pkgs.gh
     pkgs.yt-dlp
     pkgs.showmethekey
     pkgs.python3Packages.openusd
+    pkgs.herdr
     # pkgs.micromamba
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

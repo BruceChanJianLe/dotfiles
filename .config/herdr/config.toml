@@ -1,0 +1,36 @@
+onboarding = false
+
+[theme]
+name = "gruvbox"
+auto_switch = false
+dark_name = "gruvbox"
+light_name = "gruvbox-light"
+
+[keys]
+prefix = "ctrl+w"
+
+split_vertical = "prefix+|"
+
+copy_mode = "prefix+["
+detach = "prefix+d"
+
+# resize_mode (prefix+r) and reload_config (prefix+shift+r) left at herdr defaults.
+
+[ui]
+copy_on_select = true
+
+[ui.toast]
+delivery = "on"
+
+[ui.sound]
+enabled = true
+
+[session]
+resume_agents_on_restore = true
+
+[experimental]
+pane_history = true
+kitty_graphics = true
+
+[advanced]
+scrollback_limit_bytes = 20000000

@@ -37,9 +37,8 @@
     ];
 
     brews = [
-      # Core
       "ansible" "cmake" "cppcheck" "glog" "libusb" "ccache" "wget"
-      "neovim" "ripgrep" "fd" "luarocks" "imagemagick"
+      "neovim" "ripgrep" "fd" "luarocks" "imagemagick" "virtualenv"
       "tmux"
       "fzf"
       "herdr"

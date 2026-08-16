@@ -34,6 +34,7 @@
     # GUI apps stay casks: nix cannot produce a working /Applications bundle.
     casks = [
       "ghostty"
+      "brave-browser"
     ];
 
     brews = [

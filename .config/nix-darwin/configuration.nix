@@ -25,7 +25,18 @@
     finder.FXPreferredViewStyle = "Nlsv"; # list view by default
     finder.CreateDesktop = false; # no icons on the desktop
     trackpad.Clicking = true; # tap to click
+    # CustomUserPreferences = {
+    #   "com.apple.Safari" = {
+    #     NSQuitAlwaysKeepsWindows = true;
+    #     AlwaysRestoreSessionAtLaunch = true;
+    #   };
+    # };
   };
+
+  # Use finger print for passwd inside terminal
+  security.pam.services.sudo_local.touchIdAuth = true;
+  # Optional: Fixes Touch ID inside tmux sessions
+  security.pam.services.sudo_local.reattach = true;
 
   # homebrew packages
   homebrew = {
@@ -35,6 +46,8 @@
     casks = [
       "ghostty"
       "brave-browser"
+      "claude-code"
+      "foxglove"
     ];
 
     brews = [
@@ -43,6 +56,7 @@
       "tmux"
       "fzf"
       "herdr"
+      "tailscale"
     ];
 
     onActivation = {

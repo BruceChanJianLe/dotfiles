@@ -8,5 +8,6 @@
     pkgs.cmake-language-server
     pkgs.gdown
     pkgs.gh
+    pkgs.git
   ];
 }

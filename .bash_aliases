@@ -95,7 +95,7 @@ alias grr='cd $(git rev-parse --show-superproject-working-tree)'
 alias gu='git-fetch-all'
 
 # Dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias cf='config'
 alias cfa='config add'
 alias cfs='config status'

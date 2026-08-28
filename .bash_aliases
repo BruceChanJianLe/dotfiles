@@ -169,7 +169,11 @@ alias sbal="source $HOME/.bash_aliases"
 alias lg="ll | grep"
 alias eg="env | grep"
 alias hyperjump="source jump"
-alias file-permission='stat -c "%a %n"'
+if stat --version > /dev/null 2>&1; then
+  alias file-permission='stat -c "%a %n"'
+else
+  alias file-permission='stat -f "%Lp %N"'
+fi
 alias autoenv='touch .autoenv.zsh .autoenv_leave.zsh'
 alias ae='autoenv'
 alias aed='autoenv-edit'

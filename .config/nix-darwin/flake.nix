@@ -66,7 +66,7 @@
         "developer" = mkHost { user = "developer"; };
         "chanjl" = mkHost { user = "chanjl"; };
         "raus" = mkHost { user = "raus"; };
-        "samuel" = mkHost { user = "sameul"; };
+        "samuel" = mkHost { user = "samuel"; };
       };
     };
 }

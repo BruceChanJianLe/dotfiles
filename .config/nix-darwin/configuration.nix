@@ -25,12 +25,20 @@
     finder.FXPreferredViewStyle = "Nlsv"; # list view by default
     finder.CreateDesktop = false; # no icons on the desktop
     trackpad.Clicking = true; # tap to click
-    # CustomUserPreferences = {
-    #   "com.apple.Safari" = {
-    #     NSQuitAlwaysKeepsWindows = true;
-    #     AlwaysRestoreSessionAtLaunch = true;
-    #   };
-    # };
+    CustomUserPreferences = {
+      # "com.apple.Safari" = {
+      #   NSQuitAlwaysKeepsWindows = true;
+      #   AlwaysRestoreSessionAtLaunch = true;
+      # };
+      "com.apple.symbolichotkeys" = {
+        AppleSymbolicHotKeys = {
+          # Disable 'Control + Space' to select the previous input source
+          "60" = { enabled = false; };
+          # Disable 'Control + Option + Space' to select the next input source
+          "61" = { enabled = false; };
+        };
+      };
+    };
   };
 
   # Use finger print for passwd inside terminal
@@ -42,12 +50,18 @@
   homebrew = {
     enable = true;
 
-    # GUI apps stay casks: nix cannot produce a working /Applications bundle.
     casks = [
       "ghostty"
       "brave-browser"
       "claude-code"
       "foxglove"
+      "keycastr"
+      "obsidian"
+      "zoom"
+      "slack"
+      "xquartz" # ssh -X
+      "whatsapp"
+      "microsoft-teams"
     ];
 
     brews = [
@@ -56,7 +70,9 @@
       "tmux"
       "fzf"
       "herdr"
-      "tailscale"
+      "tailscale" "pixi"
+      "gcc" "tbb"
+      "ffmpeg" "yt-dlp"
     ];
 
     onActivation = {

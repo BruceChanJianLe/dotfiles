@@ -97,7 +97,7 @@ alias grr='cd $(git rev-parse --show-superproject-working-tree)'
 alias gu='git-fetch-all'
 
 # Dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias cf='config'
 alias cfa='config add'
 alias cfs='config status'
@@ -171,7 +171,11 @@ alias sbal="source $HOME/.bash_aliases"
 alias lg="ll | grep"
 alias eg="env | grep"
 alias hyperjump="source jump"
-alias file-permission='stat -c "%a %n"'
+if stat --version > /dev/null 2>&1; then
+  alias file-permission='stat -c "%a %n"'
+else
+  alias file-permission='stat -f "%Lp %N"'
+fi
 alias autoenv='touch .autoenv.zsh .autoenv_leave.zsh'
 alias ae='autoenv'
 alias aed='autoenv-edit'

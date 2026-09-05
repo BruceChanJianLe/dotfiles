@@ -10,6 +10,8 @@ alias vis='nvim -S Session.vim'
 alias vs='nvim -S Session.vim'
 alias vil='nvim leetcode.nvim'
 alias vk='NVIM_APPNAME=kickstart.nvim nvim'
+# Plugin-free nvim for quick text edits
+alias nvs="NVIM_SLIM=1 nvim"
 # Toggle markdown browser
 alias tmb="sed -i -E 's/google-chrome/brave-browser/;t; s/brave-browser/google-chrome/' $HOME/.config/nvim/lua/plugins/markdown-preview.lua"
 

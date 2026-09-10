@@ -18,7 +18,6 @@
       AppleInterfaceStyle = "Dark";
       KeyRepeat = 2; # faster than the System Settings slider allows
       InitialKeyRepeat = 15; # short delay before repeat kicks in
-      _HIHideMenuBar = true; # auto-hide the menu bar
       AppleShowAllExtensions = true;
     };
     dock.autohide = true;

@@ -54,6 +54,7 @@
                 enable = true;
                 inherit user;          # owns the /opt/homebrew prefix
                 enableRosetta = false;
+                autoMigrate = true;
               };
             }
           ];

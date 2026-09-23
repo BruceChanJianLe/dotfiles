@@ -19,6 +19,7 @@
       KeyRepeat = 2; # faster than the System Settings slider allows
       InitialKeyRepeat = 15; # short delay before repeat kicks in
       AppleShowAllExtensions = true;
+      _HIHideMenuBar = false;
     };
     dock.autohide = true;
     finder.FXPreferredViewStyle = "Nlsv"; # list view by default
@@ -49,6 +50,10 @@
   homebrew = {
     enable = true;
 
+    taps = [
+      "brucechanjianle/hyprmac"
+    ];
+
     casks = [
       "ghostty"
       "brave-browser"
@@ -61,6 +66,8 @@
       "xquartz" # ssh -X
       "whatsapp"
       "microsoft-teams"
+      "spotify"
+      "hyprmac"
     ];
 
     brews = [
@@ -72,7 +79,14 @@
       "tailscale" "pixi"
       "gcc" "tbb"
       "ffmpeg" "yt-dlp"
+      "node"
+      "ninja"
+      "xcodegen"
     ];
+
+    # the fork's builds are ad-hoc signed, not notarized; without this
+    # Gatekeeper refuses to open the app after every install or upgrade
+    caskArgs.no_quarantine = true;
 
     onActivation = {
       autoUpdate = true;

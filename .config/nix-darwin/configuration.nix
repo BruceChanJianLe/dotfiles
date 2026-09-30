@@ -21,7 +21,10 @@
       AppleShowAllExtensions = true;
       _HIHideMenuBar = false;
     };
-    dock.autohide = true;
+    dock = {
+      autohide = true;
+      autohide-delay = 0.0;
+    };
     finder.FXPreferredViewStyle = "Nlsv"; # list view by default
     finder.CreateDesktop = false; # no icons on the desktop
     trackpad.Clicking = true; # tap to click
@@ -57,7 +60,7 @@
     casks = [
       "ghostty"
       "brave-browser"
-      "claude-code"
+      "claude-code@latest"
       "foxglove"
       "keycastr"
       "obsidian"
@@ -83,10 +86,6 @@
       "ninja"
       "xcodegen"
     ];
-
-    # the fork's builds are ad-hoc signed, not notarized; without this
-    # Gatekeeper refuses to open the app after every install or upgrade
-    caskArgs.no_quarantine = true;
 
     onActivation = {
       autoUpdate = true;

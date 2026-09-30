@@ -55,9 +55,7 @@
                 inherit user;          # owns the /opt/homebrew prefix
                 enableRosetta = false;
                 autoMigrate = true;
-                trust = {
-                  casks = [ "brucechanjianle/hyprmac/hyprmac" ];
-                };
+                trust.casks = [ "brucechanjianle/hyprmac/hyprmac" ];
               };
             }
           ];
@@ -65,7 +63,7 @@
     in
     {
       # One entry per laptop. Switch with:
-      # darwin-rebuild switch --flake ~/.config/nix-darwin#developer
+      # darwin-rebuild switch --flake ~/.config/nix-darwin#$USER
       darwinConfigurations = {
         "developer" = mkHost { user = "developer"; };
         "chanjl" = mkHost { user = "chanjl"; };

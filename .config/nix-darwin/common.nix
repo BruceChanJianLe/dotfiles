@@ -65,12 +65,6 @@
     onActivation = {
       autoUpdate = true;
       upgrade = true;
-      # "none" - leaves undeclared packages alone, so the list above is additive
-      # "uninstall" - remove anything not declared (the declarative choice)
-      # "zap"       - same, plus delete app data/config (destructive; only
-      #               for a deliberate purge, not routine activation)
-      # mkDefault so a host can override in hosts/<user>.nix without conflict.
-      cleanup = "none";
     };
   };
 

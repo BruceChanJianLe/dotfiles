@@ -30,9 +30,10 @@
             nix-homebrew.darwinModules.nix-homebrew
             home-manager.darwinModules.home-manager
           ]
-          # Per-user system-level overrides (homebrew, defaults, trust ...).
-          ++ lib.optional (builtins.pathExists ./hosts/${user}.configuration.nix)
-                          ./hosts/${user}.configuration.nix
+          # Per-user configuration: system options plus the user's
+          # home-manager block, nested inside the same file.
+          ++ lib.optional (builtins.pathExists ./users/${user}.configuration.nix)
+                          ./users/${user}.configuration.nix
           ++ [
 
             {
@@ -47,10 +48,6 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { inherit user; };
-
-                users.${user}.imports =
-                  lib.optional (builtins.pathExists ./users/${user}.configuration.nix)
-                               ./users/${user}.configuration.nix;
               };
 
               nix-homebrew = {

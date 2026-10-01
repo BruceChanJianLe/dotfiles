@@ -21,10 +21,7 @@
       AppleShowAllExtensions = true;
       _HIHideMenuBar = false;
     };
-    dock = {
-      autohide = true;
-      autohide-delay = 0.0;
-    };
+    dock.autohide = false;
     finder.FXPreferredViewStyle = "Nlsv"; # list view by default
     finder.CreateDesktop = false; # no icons on the desktop
     trackpad.Clicking = true; # tap to click
@@ -53,14 +50,10 @@
   homebrew = {
     enable = true;
 
-    taps = [
-      "brucechanjianle/hyprmac"
-    ];
-
     casks = [
       "ghostty"
       "brave-browser"
-      "claude-code@latest"
+      "claude-code"
       "foxglove"
       "keycastr"
       "obsidian"
@@ -69,8 +62,6 @@
       "xquartz" # ssh -X
       "whatsapp"
       "microsoft-teams"
-      "spotify"
-      "hyprmac"
     ];
 
     brews = [
@@ -82,9 +73,7 @@
       "tailscale" "pixi"
       "gcc" "tbb"
       "ffmpeg" "yt-dlp"
-      "node"
-      "ninja"
-      "xcodegen"
+      "p7zip"
     ];
 
     onActivation = {

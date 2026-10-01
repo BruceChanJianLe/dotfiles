@@ -26,9 +26,14 @@
           specialArgs = { inherit user; };
 
           modules = [
-            ./configuration.nix
+            ./common.nix
             nix-homebrew.darwinModules.nix-homebrew
             home-manager.darwinModules.home-manager
+          ]
+          # Per-user system-level overrides (homebrew, defaults, trust ...).
+          ++ lib.optional (builtins.pathExists ./hosts/${user}.configuration.nix)
+                          ./hosts/${user}.configuration.nix
+          ++ [
 
             {
               nixpkgs.hostPlatform = system;
@@ -43,11 +48,9 @@
                 useUserPackages = true;
                 extraSpecialArgs = { inherit user; };
 
-                users.${user}.imports = [
-                  ./common.nix
-                ]
-                ++ lib.optional (builtins.pathExists ./users/${user}.nix)
-                                ./users/${user}.nix;
+                users.${user}.imports =
+                  lib.optional (builtins.pathExists ./users/${user}.configuration.nix)
+                               ./users/${user}.configuration.nix;
               };
 
               nix-homebrew = {
@@ -55,7 +58,9 @@
                 inherit user;          # owns the /opt/homebrew prefix
                 enableRosetta = false;
                 autoMigrate = true;
-                trust.casks = [ "brucechanjianle/hyprmac/hyprmac" ];
+                # trust.casks = [
+                #   "brucechanjianle/hyprmac/hyprmac"
+                # ];
               };
             }
           ];

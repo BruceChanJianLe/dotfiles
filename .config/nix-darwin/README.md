@@ -1,4 +1,4 @@
-ostty 1.3.1   > Declarative macOS setup: system settings, Homebrew packages, and per-user
+> Declarative macOS setup: system settings, Homebrew packages, and per-user
 > dotfiles via home-manager. One flake, one entry per machine.
 
 ![img](https://github.com/user-attachments/assets/e762f8e8-4d76-47d1-8565-a4f275161834)

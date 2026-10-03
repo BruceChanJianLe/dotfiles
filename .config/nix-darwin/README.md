@@ -1,7 +1,7 @@
 > Declarative macOS setup: system settings, Homebrew packages, and per-user
 > dotfiles via home-manager. One flake, one entry per machine.
 
-![img](https://github.com/user-attachments/assets/e762f8e8-4d76-47d1-8565-a4f275161834)
+![img](https://github.com/user-attachments/assets/3c8eccb4-b3e1-49f1-a8f5-5b9b0d7f6ac8)
 
 ## Layout
 

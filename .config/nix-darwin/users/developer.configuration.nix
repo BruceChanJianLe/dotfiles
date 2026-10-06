@@ -13,21 +13,23 @@
 
   homebrew = {
     taps = [
-      "brucechanjianle/hyprmac"
+      # "brucechanjianle/hyprmac"
+      "brucechanjianle/hyprdarwin"
     ];
 
     casks = [
-      "brucechanjianle/hyprmac/hyprmac"
+      # "brucechanjianle/hyprmac/hyprmac"
+      "brucechanjianle/hyprdarwin/hyprdarwin"
       "brave-browser"
       "foxglove"
       "keycastr"
-      "obsidian"
       "zoom"
       "slack"
       "xquartz" # ssh -X
       "whatsapp"
       "microsoft-teams"
       "spotify"
+      "claude-code@latest"
     ];
 
     brews = [
@@ -43,7 +45,7 @@
     # "zap"       - same, plus delete app data/config (destructive; only
     #               for a deliberate purge, not routine activation)
     onActivation = {
-      cleanup = "zap";
+      cleanup = "uninstall";
     };
   };
 
@@ -51,7 +53,8 @@
   # Declared here so a fresh machine needs no manual `brew trust`.
   # Note: entries are NOT revoked by removing them - use `brew untrust`.
   nix-homebrew.trust.casks = [
-    "brucechanjianle/hyprmac/hyprmac"
+    # "brucechanjianle/hyprmac/hyprmac"
+    "brucechanjianle/hyprdarwin/hyprdarwin"
   ];
 
   # ---------------------------------------------------------------------

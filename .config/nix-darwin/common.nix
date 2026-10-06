@@ -53,7 +53,6 @@
     # Per-user extras live in hosts/<user>.nix; list options merge.
     casks = [
       "ghostty"
-      "claude-code@latest"
     ];
 
     brews = [

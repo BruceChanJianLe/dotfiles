@@ -13,12 +13,10 @@
 
   homebrew = {
     taps = [
-      # "brucechanjianle/hyprmac"
       "brucechanjianle/hyprdarwin"
     ];
 
     casks = [
-      # "brucechanjianle/hyprmac/hyprmac"
       "brucechanjianle/hyprdarwin/hyprdarwin"
       "brave-browser"
       "foxglove"
@@ -36,8 +34,9 @@
       "cmake" "cppcheck" "glog" "libusb" "ccache" "wget"
         "tailscale" "pixi"
         "gcc" "tbb"
-        "ffmpeg" "yt-dlp"
+        "ffmpeg"
         "node" "ninja" "xcodegen"
+        "meson" "libmtp"
     ];
 
     # "none" - leaves undeclared packages alone, so the list above is additive
@@ -53,7 +52,6 @@
   # Declared here so a fresh machine needs no manual `brew trust`.
   # Note: entries are NOT revoked by removing them - use `brew untrust`.
   nix-homebrew.trust.casks = [
-    # "brucechanjianle/hyprmac/hyprmac"
     "brucechanjianle/hyprdarwin/hyprdarwin"
   ];
 
